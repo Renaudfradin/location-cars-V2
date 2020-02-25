@@ -1,0 +1,81 @@
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+.imgvoiture{
+    width: 100%;
+    height: 100vh;
+}
+#block1{
+    position: relative;
+    background-image: url("../image/home_picture\(1\).jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    height: 100vh;
+    margin-bottom: 0%;
+}
+.titre1{
+    text-align: center;
+}
+.p1{
+    text-align: center;
+}
+#infoheader{
+    display: table-cell;
+    vertical-align: middle;
+    margin-top: 10%;
+}
+.titre1{
+    font-size:45px;
+}
+.p1{
+    font-size:18px;
+    margin-top: 4%;
+}
+.inscription{
+    margin-top: 3%;
+    font-size: x-large;
+}
+#img1{
+    display: flex;
+    justify-content: center;
+}
+#IMFR{
+    margin-right: 20px;
+}
+#footer{
+    padding: 1rem 1.5rem 2rem;
+    background-color:#363636;
+    color: white;
+    
+}
+#container{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 3%;
+}
+@media screen and (max-width:1023px){
+    #img1{
+        display: block;
+        justify-content: center;
+    }
+}   
+@media screen and (min-width:768px) and (max-width:1023px){
+    #img1{
+        display: flex;
+        justify-content: center;
+    }
+}
+@media screen and (max-width:780px){
+    #IMFR{
+        margin-right: 0px;
+    }
+}  
+@media screen and (max-width:736px){
+    #img1{
+        display: grid;
+        justify-content: center;
+        width: 200px;
+        margin: auto;
+    }
+}

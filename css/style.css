@@ -34,6 +34,7 @@ body{
 }
 .inscription{
     margin-top: 3%;
+    margin-bottom: 2%;
     font-size: x-large;
 }
 #img1{
@@ -54,6 +55,9 @@ body{
     margin-right: 15%;
     margin-bottom: 3%;
 }
+#btn-espace{
+    margin-top: 1.5%;
+}
 @media screen and (max-width:1023px){
     #img1{
         display: block;
@@ -71,6 +75,13 @@ body{
         margin-right: 0px;
     }
 }  
+@media screen and (max-width:426px){
+    .inscription {
+        margin-top: 3%;
+        font-size: x-large;
+        text-align: center;
+    }
+} 
 @media screen and (max-width:736px){
     #img1{
         display: grid;

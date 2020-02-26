@@ -61,8 +61,21 @@ body{
 #btn-espace{
     margin-top: 1.5%;
 }
+#btn-espace1{
+    margin-top: 1.5%;
+}
 .h4{
     margin-bottom: 4%;
+}
+#title-profile{
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+.info-gauche{
+    margin-right: 35%;
+}
+#info-profile{
+    display: flex;
 }
 @media screen and (max-width:1023px){
     #img1{
@@ -87,6 +100,27 @@ body{
         font-size: x-large;
         text-align: center;
     }
+    .info-gauche{
+        margin-bottom: 8%;
+        margin-right: 0%;
+    }
+    #title-profile{
+        margin-bottom: 3%;
+        margin-top: 3%;
+        font-size: 2rem;
+    }
+    #btn-espace1{
+        display: block;
+        margin-top: 8%;
+    }
+    #btn-profile{
+        width: 100%;
+        margin-bottom: 5%;
+    }
+    #control{
+        margin-right: 0rem;
+    }
+    
 } 
 @media screen and (max-width:736px){
     #img1{

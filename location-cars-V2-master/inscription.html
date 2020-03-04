@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <script src="js/js.js"></script>
+        <title>AKIM-VTC</title>
+    </head>
+<body>
+    <nav class="navbar is-dark">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="index.html">AKIM VTC</a>
+          <div class="navbar-burger" data-target="navbar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" id="navbar-item1" href="location.html">LES LOCATIONS</a>
+            <a class="navbar-item" href="panier.html">PANIER</a>
+            <a class="navbar-item" href="conexion.html">CONNEXION</a>
+            <a class="navbar-item" href="inscription.html">INSCRIPTION</a> 
+          </div>
+        </div>
+    </nav>
+<div class="block">
+<div class="container" id="container">
+    <div class="colums">
+        <h1 class="inscription">INSCRIPTION</h1>
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field" id="nom-inscription-erreur">
+                    <p class="control is-expanded has-icons-left">
+                        <input class="input" type="text" placeholder="NOM" onblur="controlnom(this)" id="nom-inscription">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control is-expanded has-icons-left">
+                        <input class="input" type="text" placeholder="PRENOM" onblur="controlprenom(this)" id="prenom-inscription">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field">
+                    <p class="control is-expanded has-icons-left">
+                        <input class="input" type="email" placeholder="EMAIL">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control is-expanded has-icons-left">
+                        <input class="input" type="email" placeholder="CONFIRMER EMAIL">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field">
+                    <p class="control is-expanded has-icons-left">
+                        <input class="input" type="text" placeholder="PSEUDO" onblur="controlpseudo(this)" id="pseudo-inscription" name="pseudo">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="password" placeholder="MOT-DE-PASSE" onblur="controlmdp(this)" id="mdp-inscription" name="mdp">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="password" placeholder="CONFIRMER MOT-DE-PASSE" onblur="controlmdp1(this)" id="mdp1-inscription" name="mdp1">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <label class="checkbox">
+                <input type="checkbox">
+                J'accepte les <a href="cgu.html">conditions générales d'utilisations</a>
+            </label>
+            <br>
+            <label class="checkbox">
+                <input type="checkbox">
+                J'accepte de resevoir une newslatters
+            </label>
+        </div>
+        <div class="field is-grouped" id="btn-espace">
+            <p class="control"  onclick="controlle2mdp();">
+              <a class="button is-dark">
+                S'inscrire
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-dark" href="conexion.html">
+                Déjà inscrie
+              </a>
+            </p>
+        </div>
+
+    </div>
+</div>
+</div>
+    <footer class="footer" id="footer">
+        <div class="block">
+          <div class="container">
+              <div class="columns">
+                  <div class="column">
+                    <p>
+                      Place de marché permettant de trouver,comparer et réserver un taxi, VTC, autocar, minibus au meilleur prix partout en France.<br>
+                      Les transporteurs affiliés obtiennent une source de clients supplémentaire qui optimise leur planning.
+                    </p>
+                  </div>
+                  <div class="column">
+                      <p>
+                        Suivez-nous pour bénéficier de réductions spéciales et voyager toujours moins cher.<br>
+                        Les conditions <a href="cgu.html">générales d'utilisation.</a>
+                      </p>
+                      <!--<div class="column">
+                        <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a>
+                      </div>
+                    -->
+                  </div>
+              </div>
+              <div class="content has-text-centered">
+                <p><i class="fas fa-copyright"></i> 2020 Tous droits réservés AKIM.com</p>
+              </div>
+          </div>
+        </div>
+    </footer>
+</body>
+</html>

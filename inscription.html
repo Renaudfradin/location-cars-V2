@@ -36,9 +36,9 @@
         <h1 class="inscription">INSCRIPTION</h1>
         <div class="field is-horizontal">
             <div class="field-body">
-                <div class="field">
+                <div class="field" id="nom-inscription-erreur">
                     <p class="control is-expanded has-icons-left">
-                        <input class="input" type="text" placeholder="NOM">
+                        <input class="input" type="text" placeholder="NOM" onblur="controlnom(this)" id="nom-inscription">
                         <span class="icon is-small is-left">
                             <i class="fas fa-user"></i>
                         </span>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="field">
                     <p class="control is-expanded has-icons-left">
-                        <input class="input" type="text" placeholder="PRENOM">
+                        <input class="input" type="text" placeholder="PRENOM" onblur="controlprenom(this)" id="prenom-inscription">
                         <span class="icon is-small is-left">
                             <i class="fas fa-user"></i>
                         </span>
@@ -78,7 +78,7 @@
             <div class="field-body">
                 <div class="field">
                     <p class="control is-expanded has-icons-left">
-                        <input class="input" type="text" placeholder="PSEUDO">
+                        <input class="input" type="text" placeholder="PSEUDO" onblur="controlpseudo(this)" id="pseudo-inscription" name="pseudo">
                         <span class="icon is-small is-left">
                             <i class="fas fa-envelope"></i>
                         </span>
@@ -90,7 +90,7 @@
             <div class="field-body">
                 <div class="field">
                     <p class="control has-icons-left">
-                        <input class="input" type="password" placeholder="MOT-DE-PASSE">
+                        <input class="input" type="password" placeholder="MOT-DE-PASSE" onblur="controlmdp(this)" id="mdp-inscription" name="mdp">
                         <span class="icon is-small is-left">
                             <i class="fas fa-lock"></i>
                         </span>
@@ -98,7 +98,7 @@
                 </div>
                 <div class="field">
                     <p class="control has-icons-left">
-                        <input class="input" type="password" placeholder="CONFIRMER MOT-DE-PASSE">
+                        <input class="input" type="password" placeholder="CONFIRMER MOT-DE-PASSE" onblur="controlmdp1(this)" id="mdp1-inscription" name="mdp1">
                         <span class="icon is-small is-left">
                             <i class="fas fa-lock"></i>
                         </span>
@@ -118,7 +118,7 @@
             </label>
         </div>
         <div class="field is-grouped" id="btn-espace">
-            <p class="control">
+            <p class="control"  onclick="controlle2mdp();">
               <a class="button is-dark">
                 S'inscrire
               </a>

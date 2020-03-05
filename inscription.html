@@ -58,7 +58,7 @@
             <div class="field-body">
                 <div class="field">
                     <p class="control is-expanded has-icons-left">
-                        <input class="input" type="email" placeholder="EMAIL">
+                        <input class="input" type="email" placeholder="EMAIL"  onblur="controlmail(this)" id="email-inscription">
                         <span class="icon is-small is-left">
                             <i class="fas fa-envelope"></i>
                         </span>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="field">
                     <p class="control is-expanded has-icons-left">
-                        <input class="input" type="email" placeholder="CONFIRMER EMAIL">
+                        <input class="input" type="email" placeholder="CONFIRMER EMAIL"  onblur="controlmail(this)" id="email-inscription">
                         <span class="icon is-small is-left">
                             <i class="fas fa-envelope"></i>
                         </span>
@@ -118,7 +118,7 @@
             </label>
         </div>
         <div class="field is-grouped" id="btn-espace">
-            <p class="control"  onclick="controlle2mdp();">
+            <p class="control"  onclick="controlleinfo();">
               <a class="button is-dark">
                 S'inscrire
               </a>
@@ -131,7 +131,7 @@
         </div>
 
     </div>
-</div>
+</div><br>
 </div>
     <footer class="footer" id="footer">
         <div class="block">

@@ -23,10 +23,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+function regexcontrollettre() {
+    const regex = /^[a-zA-Z]+$/;
+    return regex;
+};
+function regexcontrolmail() {
+    const regex1 = /^[^\W][a-zA-Z0-9](\.[a-zA-Z0-9_]+)*\@[a-zA-Z]+(\.[a-zA-Z0-9_]+)*\.[a-z]{2,4}$/;
+    return regex1;
+};
+function controlmail(champ) {
+    const regex1 = regexcontrolmail();
+    if (regex1.test(champ.value)) {
+        console.log("respect email");
+        document.getElementById("email-inscription").className = "input is-success";
+    }else{
+        console.log("pa respect mail");
+        document.getElementById("email-inscription").className = "input is-danger";
+
+    }
+};
 function controlpseudo(champ) {
+    const regex = regexcontrollettre();
     if (champ.value.length > 2 && champ.value.length < 50) {
-        console.log("bon");
-        document.getElementById("pseudo-inscription").className = "input is-success";
+        if (regex.test(champ.value)) {
+            console.log("respect lettre");
+            console.log("bon");
+            document.getElementById("pseudo-inscription").className = "input is-success";
+        }
+        else{
+            console.log("pa bon");
+            document.getElementById("pseudo-inscription").className = "input is-danger";
+        }
     }
     else if(champ.value.length == 0){
         console.log("pa bon");
@@ -38,10 +65,18 @@ function controlpseudo(champ) {
     }
 };
 function controlnom(champ) {
+    const regex = regexcontrollettre();
     if (champ.value.length > 2 && champ.value.length < 50) {
+        if (regex.test(champ.value)) {
+            console.log("respect lettre");
+            console.log("bon");
+            document.getElementById("nom-inscription").className = "input is-success";
+        }
+        else{
+            console.log("pa bon");
+            document.getElementById("nom-inscription").className = "input is-danger";
+        }
         //const notiferreurs = document.getElementById("nom-inscription-erreur");
-        console.log("bon");
-        document.getElementById("nom-inscription").className = "input is-success";
     }
     else if(champ.value.length == 0){
         console.log("pa bon");
@@ -55,8 +90,15 @@ function controlnom(champ) {
 };
 function controlprenom(champ) {
     if (champ.value.length > 2 && champ.value.length < 50) {
-        console.log("bon");
-        document.getElementById("prenom-inscription").className = "input is-success";
+        if (regex.test(champ.value)) {
+            console.log("respect lettre");
+            console.log("bon");
+            document.getElementById("prenom-inscription").className = "input is-success";
+        }
+        else{
+            console.log("pa bon");
+            document.getElementById("prenom-inscription").className = "input is-danger";
+        }
     }
     else if(champ.value.length == 0){
         console.log("pa bon");
@@ -84,6 +126,7 @@ function controlmdp(champ) {
 function controlmdp1(champ) {
     if (champ.value.length > 2 && champ.value.length < 50) {
         console.log("bon");
+        document.getElementById("mdp1-inscription").className = "input is-success";
     }
     else if(champ.value.length == 0){
         console.log("pa bon");
@@ -94,7 +137,7 @@ function controlmdp1(champ) {
         document.getElementById("mdp1-inscription").className = "input is-danger";
     }
 };
-function controlle2mdp() {
+function controlleinfo() {
     const mdp1 = document.getElementById("mdp-inscription").value;
     const mdp2 = document.getElementById("mdp1-inscription").value;
     console.log(mdp1);
@@ -105,6 +148,7 @@ function controlle2mdp() {
     }
     else{
         console.log("mdp pa egale");
+        document.getElementById("mdp-inscription").className = "input is-danger";
         document.getElementById("mdp1-inscription").className = "input is-danger";
     }
 };

@@ -1,23 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-    // Check if there are any navbar burgers
     if ($navbarBurgers.length > 0) {
-
-    // Add a click event on each of them
     $navbarBurgers.forEach( el => {
         el.addEventListener('click', () => {
-
-        // Get the target from the "data-target" attribute
         const target = el.dataset.target;
         const $target = document.getElementById(target);
-
-        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
         el.classList.toggle('is-active');
         $target.classList.toggle('is-active');
-
         });
     });
     }
@@ -25,6 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 function regexcontrollettre() {
     const regex = /^[a-zA-Z]+$/;
+    return regex;
+};
+function regexcontrolletrechiffre() {
+    const regex = /^[a-zA-Z0-9]+$/;
     return regex;
 };
 function regexcontrolmail() {
@@ -45,19 +38,9 @@ function normalinput() {
 };
 
 
-function controlmail(champ) {
-    const regex1 = regexcontrolmail();
-    if (regex1.test(champ.value)) {
-        console.log("respect email");
-        document.getElementById("email-inscription").className = issucces();
-    }else{
-        console.log("pa respect mail");
-        document.getElementById("email-inscription").className = isdanger();
 
-    }
-};
 function controlpseudo(champ) {
-    const regex = regexcontrollettre();
+    const regex = regexcontrolletrechiffre();
     if (champ.value.length > 2 && champ.value.length < 50) {
         if (regex.test(champ.value)) {
             console.log("respect lettre");
@@ -103,6 +86,7 @@ function controlnom(champ) {
     }
 };
 function controlprenom(champ) {
+    const regex = regexcontrollettre();
     if (champ.value.length > 2 && champ.value.length < 50) {
         if (regex.test(champ.value)) {
             console.log("respect lettre");
@@ -124,21 +108,42 @@ function controlprenom(champ) {
     }
 };
 function controlmdp(champ) {
+    const mdp11 = document.getElementById("mdp1-inscription").value;
     if (champ.value.length > 2 && champ.value.length < 50) {
-        console.log("bon");
-        document.getElementById("mdp-inscription").className = issucces();
+        if (mdp11 == champ.value) {
+            console.log("bon");
+            console.log("2 code bons")
+            document.getElementById("mdp-inscription").className = issucces();
+            document.getElementById("mdp1-inscription").className = issucces();
+        }
+        else{
+            document.getElementById("mdp-inscription").className = isdanger();
+            document.getElementById("mdp1-inscription").className = isdanger();
+        }
     }
     else if(champ.value.length == 0){
-        console.log("pa bon");
+        console.log("pa bon444");
         document.getElementById("mdp-inscription").className = normalinput();
+        document.getElementById("mdp1-inscription").className = normalinput();
     }
     else{
-        console.log("pa bon");
+        console.log("pa bon1111");
         document.getElementById("mdp-inscription").className = isdanger();
     }
 };
 function controlmdp1(champ) {
+    const mdp12 = document.getElementById("mdp-inscription").value;
     if (champ.value.length > 2 && champ.value.length < 50) {
+        if (mdp12 == champ.value) {
+            console.log("bon");
+            console.log("2 code bons")
+            document.getElementById("mdp-inscription").className = issucces();
+            document.getElementById("mdp1-inscription").className = issucces();
+        }
+        else{
+            document.getElementById("mdp-inscription").className = isdanger();
+            document.getElementById("mdp1-inscription").className = isdanger();
+        }
         console.log("bon");
         document.getElementById("mdp1-inscription").className = issucces();
     }
@@ -151,22 +156,49 @@ function controlmdp1(champ) {
         document.getElementById("mdp1-inscription").className = isdanger();
     }
 };
+function controlmail(champ) {
+    const regex1 = regexcontrolmail();
+    if (regex1.test(champ.value)) {
+        console.log("respect email");
+        document.getElementById("email-inscription").className = issucces();
+    }else{
+        console.log("pa respect mail");
+        document.getElementById("email-inscription").className = isdanger();
+
+    }
+};
+function controlmail1(champ) {
+    const regex1 = regexcontrolmail();
+    if (regex1.test(champ.value)) {
+        console.log("respect email1");
+        document.getElementById("email1-inscription").className = issucces();
+    }else{
+        console.log("pa respect mail1");
+        document.getElementById("email1-inscription").className = isdanger();
+
+    }
+};
 function controlleinfo() {
     const mdp1 = document.getElementById("mdp-inscription").value;
     const mdp2 = document.getElementById("mdp1-inscription").value;
-    const prenom = ;  
-    const nom = ;
-    const pseudo = ;
-    const email = ;
-    //console.log(mdp1);
-    //console.log(mdp2);
-   
-    if (mdp1 == mdp2){
-        if (mdp1.length === 0 || mdp2 === 0) {
+    const email = document.getElementById("email-inscription").value;
+    const email1 = document.getElementById("email1-inscription").value;
+    const prenom = document.getElementById("prenom-inscription").value;  
+    const nom = document.getElementById("nom-inscription").value;
+    const pseudo = document.getElementById("pseudo-inscription").value;
+
+    if (mdp1 == mdp2 && email == email1){
+        if (mdp1.length === 0 || mdp2 === 0 || prenom === 0 || nom === 0 || pseudo === 0 || email === 0 || email1 === 0) {
             document.getElementById("mdp-inscription").className = isdanger();
             document.getElementById("mdp1-inscription").className = isdanger();
+            document.getElementById("prenom-inscription").className = isdanger();
+            document.getElementById("nom-inscription").className = isdanger();
+            document.getElementById("pseudo-inscription").className = isdanger();
+            document.getElementById("email-inscription").className = isdanger();
+            document.getElementById("email1-inscription").className = isdanger();
+
         }else{
-            console.log("mdp egale");
+            console.log("info bonne est remplie");
             document.getElementById("mdp1-inscription").className = issucces();
         }
     }
@@ -174,5 +206,8 @@ function controlleinfo() {
         console.log("mdp pa egale");
         document.getElementById("mdp-inscription").className = isdanger();
         document.getElementById("mdp1-inscription").className = isdanger();
+        document.getElementById("email-inscription").className = isdanger();
+        document.getElementById("email1-inscription").className = isdanger();
+        
     }
 };

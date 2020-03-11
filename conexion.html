@@ -37,7 +37,7 @@
           <div class="field-body">
               <div class="field">
                   <p class="control is-expanded has-icons-left">
-                      <input class="input" type="text" placeholder="PSEUDO">
+                      <input class="input" type="text" placeholder="PSEUDO" id="pseudo-connexion" onblur="controlpseudo1(this)">
                       <span class="icon is-small is-left">
                           <i class="fas fa-envelope"></i>
                       </span>
@@ -49,7 +49,7 @@
           <div class="field-body">
               <div class="field">
                   <p class="control is-expanded has-icons-left">
-                      <input class="input" type="password" placeholder="MOT-DE-PASSE">
+                      <input class="input" type="password" placeholder="MOT-DE-PASSE" id="mdp-connexion" onblur="controlmdp3(this)">
                       <span class="icon is-small is-left">
                           <i class="fas fa-envelope"></i>
                       </span>
@@ -62,11 +62,8 @@
           J'accepte les <a href="cgu.html">conditions générales d'utilisations</a>
         </label>
         <div class="field" id="btn-espace">
-          <p class="control">
-            <a class="button is-dark is-medium">
-              
-              CONNEXION
-            </a>
+          <p class="control" onclick="controleinfoconexion();">
+            <a class="button is-dark is-medium">CONNEXION</a>
           </p>
           <div class="field is-grouped" id="btn-espace">
             <p class="control">

@@ -46,6 +46,7 @@ function controlpseudo(champ) {
             console.log("respect lettre");
             console.log("bon");
             document.getElementById("pseudo-inscription").className = issucces();
+ 
         }
         else{
             console.log("pa bon");
@@ -233,5 +234,64 @@ function controlleinfo() {
         document.getElementById("email-inscription").className = isdanger();
         document.getElementById("email1-inscription").className = isdanger();
         
+    }
+};
+function controlpseudo1(champ) {
+    const regex = regexcontrolletrechiffre();
+    if (champ.value.length > 2 && champ.value.length < 50) {
+        if (regex.test(champ.value)) {
+            console.log("respect lettre");
+            console.log("bon");
+            document.getElementById("pseudo-connexion").className = issucces();
+ 
+        }
+        else{
+            console.log("pa bon");
+            document.getElementById("pseudo-connexion").className = isdanger();
+        }
+    }
+    else if(champ.value.length == 0){
+        console.log("pa bon");
+        document.getElementById("pseudo-connexion").className = normalinput();
+    }
+    else{
+        console.log("pa bon");
+        document.getElementById("pseudo-connexion").className = isdanger();
+    }
+};
+function controlmdp3(champ) {
+    if (champ.value.length > 2 && champ.value.length < 50) {
+        document.getElementById("mdp-connexion").className = issucces();
+    }
+    else if(champ.value.length == 0){
+        console.log("pa bon");
+        document.getElementById("mdp-connexion").className = normalinput();
+    }
+    else{
+        console.log("pa bon");
+        document.getElementById("mdp-connexion").className = isdanger();
+    }
+};
+function controleinfoconexion() {
+    const pseudo = document.getElementById("pseudo-connexion").value;
+    const mdp = document.getElementById("mdp-connexion").value;
+
+    if (pseudo.length < 2 || mdp.length < 2) {
+        if (pseudo.length < 2 && mdp.length > 2) {
+            console.log("1");
+            document.getElementById("pseudo-connexion").className = isdanger();
+            document.getElementById("mdp-connexion").className = issucces();
+        } else if(mdp.length < 2 && pseudo.length > 2){
+            console.log("2");
+            document.getElementById("pseudo-connexion").className = issucces();
+            document.getElementById("mdp-connexion").className = isdanger();
+        } else if(pseudo.length < 2 && mdp.length < 2){
+            console.log("3");
+            document.getElementById("pseudo-connexion").className = isdanger();
+            document.getElementById("mdp-connexion").className = isdanger();
+        }
+    } else {
+        document.getElementById("pseudo-connexion").className = issucces();
+        document.getElementById("mdp-connexion").className = issucces();
     }
 };

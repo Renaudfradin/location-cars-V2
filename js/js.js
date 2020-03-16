@@ -206,102 +206,42 @@ function controlleinfo() {
     const nom = document.getElementById("nom-inscription").value;
     const pseudo = document.getElementById("pseudo-inscription").value;
 
-    if (mdp1 == mdp2 && email == email1){
-        if (mdp1.length < 2 || mdp2.length < 2 || prenom.length < 2 || nom.length < 2 || pseudo.length < 2 || email.length < 2 || email1.length < 2) {
-            if (mdp1.length < 2 && mdp2.length > 2 && prenom.length > 2 && nom.length > 2 && pseudo.length > 2 && email.length > 2 && email1.length > 2) {
-                document.getElementById("mdp-inscription").className = isdanger();
-                document.getElementById("mdp1-inscription").className = issucces();
-                document.getElementById("prenom-inscription").className = issucces();
-                document.getElementById("nom-inscription").className = issucces();
-                document.getElementById("pseudo-inscription").className = issucces();
-                document.getElementById("email-inscription").className = issucces();
-                document.getElementById("email1-inscription").className = issucces();
-            }
-            else if (mdp1.length > 2 && mdp2.length < 2 && prenom.length > 2 && nom.length > 2 && pseudo.length > 2 && email.length > 2 && email1.length > 2) {
-                document.getElementById("mdp-inscription").className = issucces();
-                document.getElementById("mdp1-inscription").className = isdanger();
-                document.getElementById("prenom-inscription").className = issucces();
-                document.getElementById("nom-inscription").className = issucces();
-                document.getElementById("pseudo-inscription").className = issucces();
-                document.getElementById("email-inscription").className = issucces();
-                document.getElementById("email1-inscription").className = issucces();
-            }
-            else if (mdp1.length > 2 && mdp2.length > 2 && prenom.length < 2 && nom.length > 2 && pseudo.length > 2 && email.length > 2 && email1.length > 2) {
-                document.getElementById("mdp-inscription").className = issucces();
-                document.getElementById("mdp1-inscription").className = issucces();
-                document.getElementById("prenom-inscription").className = isdanger();
-                document.getElementById("nom-inscription").className = issucces();
-                document.getElementById("pseudo-inscription").className = issucces();
-                document.getElementById("email-inscription").className = issucces();
-                document.getElementById("email1-inscription").className = issucces();
-            }
-            else if (mdp1.length > 2 && mdp2.length > 2 && prenom.length > 2 && nom.length < 2 && pseudo.length > 2 && email.length > 2 && email1.length > 2) {
-                document.getElementById("mdp-inscription").className = issucces();
-                document.getElementById("mdp1-inscription").className = issucces();
-                document.getElementById("prenom-inscription").className = issucces();
-                document.getElementById("nom-inscription").className = isdanger();
-                document.getElementById("pseudo-inscription").className = issucces();
-                document.getElementById("email-inscription").className = issucces();
-                document.getElementById("email1-inscription").className = issucces();
-            }
-            else if (mdp1.length > 2 && mdp2.length > 2 && prenom.length > 2 && nom.length > 2 && pseudo.length < 2 && email.length > 2 && email1.length > 2) {
-                document.getElementById("mdp-inscription").className = issucces();
-                document.getElementById("mdp1-inscription").className = issucces();
-                document.getElementById("prenom-inscription").className = issucces();
-                document.getElementById("nom-inscription").className = issucces();
-                document.getElementById("pseudo-inscription").className = isdanger();
-                document.getElementById("email-inscription").className = issucces();
-                document.getElementById("email1-inscription").className = issucces();
-            }
-            else if (mdp1.length > 2 && mdp2.length > 2 && prenom.length > 2 && nom.length > 2 && pseudo.length > 2 && email.length < 2 && email1.length > 2) {
-                document.getElementById("mdp-inscription").className = issucces();
-                document.getElementById("mdp1-inscription").className = issucces();
-                document.getElementById("prenom-inscription").className = issucces();
-                document.getElementById("nom-inscription").className = issucces();
-                document.getElementById("pseudo-inscription").className = issucces();
-                document.getElementById("email-inscription").className = isdanger();
-                document.getElementById("email1-inscription").className = issucces();
-            }
-            else if (mdp1.length > 2 && mdp2.length > 2 && prenom.length > 2 && nom.length > 2 && pseudo.length > 2 && email.length > 2 && email1.length < 2) {
-                document.getElementById("mdp-inscription").className = issucces();
-                document.getElementById("mdp1-inscription").className = issucces();
-                document.getElementById("prenom-inscription").className = issucces();
-                document.getElementById("nom-inscription").className = issucces();
-                document.getElementById("pseudo-inscription").className = issucces();
-                document.getElementById("email-inscription").className = issucces();
-                document.getElementById("email1-inscription").className = isdanger();
-            }
-            else if (mdp1.length < 2 && mdp2.length < 2 && prenom.length < 2 && nom.length < 2 && pseudo.length < 2 && email.length < 2 && email1.length < 2){
-                document.getElementById("mdp-inscription").className = isdanger();
-                document.getElementById("mdp1-inscription").className = isdanger();
-                document.getElementById("prenom-inscription").className = isdanger();
-                document.getElementById("nom-inscription").className = isdanger();
-                document.getElementById("pseudo-inscription").className = isdanger();
-                document.getElementById("email-inscription").className = isdanger();
-                document.getElementById("email1-inscription").className = isdanger();
-            }
-           /* */
-        }
-    }/*else{
-         // console.log("info bonne est remplie");
-            document.getElementById("mdp-inscription").className = issucces();
-            document.getElementById("mdp1-inscription").className = issucces();
-            document.getElementById("prenom-inscription").className = issucces();
-            document.getElementById("nom-inscription").className = issucces();
-            document.getElementById("pseudo-inscription").className = issucces();
-            document.getElementById("email-inscription").className = issucces();
-            document.getElementById("email1-inscription").className = issucces();
-        }*/
-  
-    else{
+    if (mdp1 == mdp2 && email == email1 && mdp1 > 2 && mdp2 > 2 && email > 2 && email1 > 2){
+        console.log("envoie info");
+        document.getElementById("mdp-inscription").className = issucces();
+        document.getElementById("mdp1-inscription").className = issucces();
+        document.getElementById("email-inscription").className = issucces();
+        document.getElementById("email1-inscription").className = issucces();  
+
+        
+    }else{
         console.log("mdp pa egale");
         document.getElementById("mdp-inscription").className = isdanger();
         document.getElementById("mdp1-inscription").className = isdanger();
         document.getElementById("email-inscription").className = isdanger();
-        document.getElementById("email1-inscription").className = isdanger();
-        
+        document.getElementById("email1-inscription").className = isdanger();       
     }
 };
+if ( prenom.length < 2 || nom.length < 2 || pseudo.length < 2) {
+    if (mdp1.length < 2 && mdp2.length < 2 && prenom.length < 2 && nom.length < 2 && pseudo.length < 2 && email.length < 2 && email1.length < 2) {
+        document.getElementById("mdp-inscription").className = isdanger();
+        document.getElementById("mdp1-inscription").className = isdanger();
+        document.getElementById("prenom-inscription").className = isdanger();
+        document.getElementById("nom-inscription").className = isdanger();
+        document.getElementById("pseudo-inscription").className = isdanger();
+        document.getElementById("email-inscription").className = isdanger();
+        document.getElementById("email1-inscription").className = isdanger();
+    }
+}else{
+    // console.log("info bonne est remplie");
+       document.getElementById("mdp-inscription").className = issucces();
+       document.getElementById("mdp1-inscription").className = issucces();
+       document.getElementById("prenom-inscription").className = issucces();
+       document.getElementById("nom-inscription").className = issucces();
+       document.getElementById("pseudo-inscription").className = issucces();
+       document.getElementById("email-inscription").className = issucces();
+       document.getElementById("email1-inscription").className = issucces();
+   }
 function controlpseudo1(champ) {
     const regex = regexcontrolletrechiffre();
     if (champ.value.length > 2 && champ.value.length < 50) {

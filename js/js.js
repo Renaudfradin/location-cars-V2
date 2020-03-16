@@ -69,10 +69,12 @@ function controlnom(champ) {
             console.log("respect lettre");
             console.log("bon");
             document.getElementById("nom-inscription").className = issucces();
+            //document.getElementById("nom-inscription-erreur").innerHTML += "<p class='help is-success'>This usernasqqssqsqsqsqsqsqsqme is available</p>";
         }
         else{
             console.log("pa bon");
             document.getElementById("nom-inscription").className = isdanger();
+            //document.getElementById("nom-inscription-erreur").innerHTML += "<p class='help is-danger'>This usernasqqssqsqsqsqsqsqsqme issss available</p>";
         }
         //const notiferreurs = document.getElementById("nom-inscription-erreur");
     }
@@ -83,7 +85,8 @@ function controlnom(champ) {
     else{
         console.log("pa bon");
         document.getElementById("nom-inscription").className = isdanger();
-        //document.getElementById("nom-inscription-erreur").innerHTML += "<p class='help is-success'>This usernasqqssqsqsqsqsqsqsqme is available</p>";
+        //document.getElementById("nom-inscription-erreur").innerHTML += "<p class='help is-danger'>This usernasqqssqsqsqsqsqsqsqme issssss available</p>";
+        //
     }
 };
 function controlprenom(champ) {
@@ -206,42 +209,30 @@ function controlleinfo() {
     const nom = document.getElementById("nom-inscription").value;
     const pseudo = document.getElementById("pseudo-inscription").value;
 
-    if (mdp1 == mdp2 && email == email1 && mdp1 > 2 && mdp2 > 2 && email > 2 && email1 > 2){
+    if (mdp1 == mdp2 && email == email1 && mdp1.length > 2 && mdp2.length > 2 && email.length > 2 && email1.length > 2 && prenom.length > 2 && nom.length > 2 && pseudo.length > 2){
         console.log("envoie info");
         document.getElementById("mdp-inscription").className = issucces();
         document.getElementById("mdp1-inscription").className = issucces();
         document.getElementById("email-inscription").className = issucces();
         document.getElementById("email1-inscription").className = issucces();  
+        document.getElementById("nom-inscription").className = issucces();
+        document.getElementById("prenom-inscription").className = issucces();
+        document.getElementById("pseudo-inscription").className = issucces();       
+        document.getElementById("nocccm-inscription-erreur").innerHTML = "<p class='help is-success'>Le formulaire est bien remplie</p>";
 
-        
     }else{
         console.log("mdp pa egale");
         document.getElementById("mdp-inscription").className = isdanger();
         document.getElementById("mdp1-inscription").className = isdanger();
         document.getElementById("email-inscription").className = isdanger();
-        document.getElementById("email1-inscription").className = isdanger();       
+        document.getElementById("email1-inscription").className = isdanger(); 
+        document.getElementById("nom-inscription").className = isdanger();
+        document.getElementById("prenom-inscription").className = isdanger();
+        document.getElementById("pseudo-inscription").className = isdanger();      
+        document.getElementById("nocccm-inscription-erreur").innerHTML = "<p class='help is-danger'>Le formulaire est mal remplie</p>";
     }
 };
-if ( prenom.length < 2 || nom.length < 2 || pseudo.length < 2) {
-    if (mdp1.length < 2 && mdp2.length < 2 && prenom.length < 2 && nom.length < 2 && pseudo.length < 2 && email.length < 2 && email1.length < 2) {
-        document.getElementById("mdp-inscription").className = isdanger();
-        document.getElementById("mdp1-inscription").className = isdanger();
-        document.getElementById("prenom-inscription").className = isdanger();
-        document.getElementById("nom-inscription").className = isdanger();
-        document.getElementById("pseudo-inscription").className = isdanger();
-        document.getElementById("email-inscription").className = isdanger();
-        document.getElementById("email1-inscription").className = isdanger();
-    }
-}else{
-    // console.log("info bonne est remplie");
-       document.getElementById("mdp-inscription").className = issucces();
-       document.getElementById("mdp1-inscription").className = issucces();
-       document.getElementById("prenom-inscription").className = issucces();
-       document.getElementById("nom-inscription").className = issucces();
-       document.getElementById("pseudo-inscription").className = issucces();
-       document.getElementById("email-inscription").className = issucces();
-       document.getElementById("email1-inscription").className = issucces();
-   }
+
 function controlpseudo1(champ) {
     const regex = regexcontrolletrechiffre();
     if (champ.value.length > 2 && champ.value.length < 50) {
@@ -287,17 +278,21 @@ function controleinfoconexion() {
             console.log("1");
             document.getElementById("pseudo-connexion").className = isdanger();
             document.getElementById("mdp-connexion").className = issucces();
+            document.getElementById("nocccm-connexion-erreur").innerHTML = "<p class='help is-danger'>Il manque le pseudo</p>";
         } else if(mdp.length < 2 && pseudo.length > 2){
             console.log("2");
             document.getElementById("pseudo-connexion").className = issucces();
             document.getElementById("mdp-connexion").className = isdanger();
+            document.getElementById("nocccm-connexion-erreur").innerHTML = "<p class='help is-danger'>Il manque  le mot de passe</p>";
         } else if(pseudo.length < 2 && mdp.length < 2){
             console.log("3");
             document.getElementById("pseudo-connexion").className = isdanger();
             document.getElementById("mdp-connexion").className = isdanger();
+            document.getElementById("nocccm-connexion-erreur").innerHTML = "<p class='help is-danger'>Il manque le pseudo est le mot de passe</p>";
         }
     } else {
         document.getElementById("pseudo-connexion").className = issucces();
         document.getElementById("mdp-connexion").className = issucces();
+        document.getElementById("nocccm-connexion-erreur").innerHTML = "<p class='help is-success'>Le formulaire est bien remplie</p>";
     }
 };
